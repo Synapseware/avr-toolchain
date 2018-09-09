@@ -15,17 +15,17 @@ fi
 SRC=
 if [ -z $1 ]; then
 	echo "Path not specified, looking for atpack files in $PWD"
-	SRC=$PWD
+	SRC=$PWD/packs
 else
 	SRC=$1
 fi
-
-echo "Looking for atpack files in $SRC"
 
 # Ensure the packs directory
 [ ! -d "/opt/avr/packs" ] && mkdir -p /opt/avr/packs
 
 # Enumerate the atpack files
+echo "Looking for atpack files in $SRC"
+
 for entry in $SRC/*.atpack
 do
 	NAME=$(basename "$entry")
