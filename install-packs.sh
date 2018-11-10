@@ -14,8 +14,8 @@ fi
 
 SRC=
 if [ -z $1 ]; then
-	echo "Path not specified, looking for atpack files in $PWD"
-	SRC=$PWD
+	SRC=$PWD/packs
+	echo "Path not specified, looking for atpack files in $SRC"
 else
 	SRC=$1
 fi
@@ -43,3 +43,4 @@ do
 
 	unzip $entry -d $OUTDIR
 done
+
