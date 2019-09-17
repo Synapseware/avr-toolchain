@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sudo apt install -y avr-libc gcc-avr binutils-avr avrdude
+
+if [ -z $1 ]; then
+	echo "Please provide an AVR GNU Toolchain filename."
+	exit -2
+fi
+
+SRC=$1
+
+sudo ./install-toolchain.sh $SRC
+
+sudo ./install-packs.sh ./packs/

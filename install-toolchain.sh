@@ -18,6 +18,10 @@ VER=`echo $SRC | awk -F"-" '{ print $4 }'`
 NAME="avr8-gnu-toolchain-$VER"
 DST="/opt/$NAME"
 
+echo "Version: $VER"
+echo "Name: $NAME"
+echo "Destination: $DST"
+
 if [ -d "$DST" ]; then
 	echo "Destination folder exists.  Exiting."
 	exit -1
