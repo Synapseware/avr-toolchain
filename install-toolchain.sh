@@ -12,6 +12,12 @@ if [ -z $1 ]; then
 	exit -2
 fi
 
+if [ ! -f "$1" ]; then
+	echo "Toolchain file \"$1\" not found"
+	exit -3
+fi
+
+# Set the SRC path
 SRC=$1
 
 VER=`echo $SRC | awk -F"-" '{ print $4 }'`
